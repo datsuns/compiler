@@ -1,7 +1,7 @@
 .PHONY: all
 
-all: 1st
+all: test1
 
-1st:
+test1:
 	gcc -o test1 test1.c
 	./test1.exe
