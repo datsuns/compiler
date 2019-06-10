@@ -1,4 +1,6 @@
-.PHONY: all test 1st clean
+.PHONY: all 9cc test 1st clean
+
+BIN := 9cc.exe
 
 all: 1st test
 
@@ -10,6 +12,8 @@ clean:
 	-rm 9cc.exe
 	-rm tmp.*
 
-1st:
+$(BIN): 9cc.c
 	gcc -o 9cc 9cc.c
-	./9cc.exe 123 > tmp.s
+
+1st: $(BIN)
+	./$(BIN) 123 > tmp.s
